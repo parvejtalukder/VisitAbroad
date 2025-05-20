@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit Abroad - Explore the World</title>
+    <title>Visit Abroad | Educational Travel Agency from Sylhet</title>
     <style>
-        /* Thalowali Inspired CSS */
+        /* Premium Educational Travel CSS */
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #e74c3c;
-            --accent-color: #f39c12;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #34495e;
-            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --primary: #2a5f8a;
+            --secondary: #f7b731;
+            --accent: #1e3799;
+            --light: #f8f9fa;
+            --dark: #1e272e;
+            --text: #333333;
+            --blue-gradient: linear-gradient(135deg, #2a5f8a 0%, #1e3799 100%);
+            --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--light-color);
-            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
             line-height: 1.6;
         }
 
-        /* Header Styles */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            background: var(--blue-gradient);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -63,12 +70,12 @@
         }
 
         .logo span {
-            color: var(--accent-color);
+            color: var(--secondary);
         }
 
-        .logo i {
+        .logo img {
+            height: 40px;
             margin-right: 10px;
-            font-size: 2rem;
         }
 
         nav ul {
@@ -84,45 +91,54 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
         }
 
-        nav ul li a:hover {
-            color: var(--accent-color);
-            background-color: rgba(255, 255, 255, 0.1);
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.7rem 1.5rem;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 1.8rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: var(--transition);
             box-shadow: var(--shadow);
         }
 
         .btn:hover {
-            background-color: #c0392b;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            min-height: 700px;
+            background: url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            text-align: center;
-            color: white;
             position: relative;
-            margin-top: 70px;
+            margin-top: 0;
         }
 
         .hero::before {
@@ -132,72 +148,35 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(42, 95, 138, 0.7);
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            width: 100%;
+            color: white;
+            max-width: 800px;
         }
 
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
         }
 
-        .search-box {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
-            box-shadow: var(--shadow);
-        }
-
-        .search-box h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .search-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--dark-color);
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        /* Destinations Section */
+        /* About Section */
         .section {
-            padding: 5rem 0;
+            padding: 6rem 0;
         }
 
         .section-title {
@@ -207,7 +186,7 @@
 
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: var(--primary);
             position: relative;
             display: inline-block;
             padding-bottom: 1rem;
@@ -221,162 +200,183 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--accent-color);
+            background: var(--secondary);
         }
 
-        .section-title p {
-            color: #7f8c8d;
-            max-width: 700px;
-            margin: 1rem auto 0;
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
 
-        .destinations {
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Services */
+        .services {
+            background-color: #f1f5f9;
+        }
+
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .destination-card {
-            background-color: white;
+        .service-card {
+            background: white;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.3s;
+            transition: var(--transition);
         }
 
-        .destination-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
         }
 
-        .card-img {
+        .service-img {
             height: 200px;
             overflow: hidden;
         }
 
-        .card-img img {
+        .service-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 1s ease;
         }
 
-        .destination-card:hover .card-img img {
+        .service-card:hover .service-img img {
             transform: scale(1.1);
         }
 
-        .card-content {
-            padding: 1.5rem;
+        .service-content {
+            padding: 2rem;
         }
 
-        .card-content h3 {
+        .service-content h3 {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .card-content p {
-            color: #7f8c8d;
             margin-bottom: 1rem;
+            color: var(--primary);
         }
 
-        .price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .rating {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Packages Section */
-        .packages {
-            background-color: #f5f5f5;
-        }
-
-        .package-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 0.8rem 1.5rem;
-            background-color: white;
-            border: none;
-            margin: 0 0.5rem 1rem;
-            cursor: pointer;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: var(--shadow);
-        }
-
-        .tab-btn.active {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .package-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .package-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .package-card .card-img {
-            height: 250px;
-        }
-
-        .package-info {
-            padding: 1.5rem;
-        }
-
-        .package-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .package-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            color: #7f8c8d;
-        }
-
-        .package-details {
+        .service-content p {
             margin-bottom: 1.5rem;
         }
 
-        .package-footer {
+        /* Destinations */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .destination-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .destination-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .destination-content {
+            padding: 1.5rem;
+        }
+
+        .destination-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .destination-content p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .destination-meta {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .destination-price {
+            color: var(--secondary);
+            font-weight: 600;
         }
 
         /* Testimonials */
         .testimonials {
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            background: var(--blue-gradient);
             color: white;
+            padding: 6rem 0;
         }
 
         .testimonials .section-title h2 {
             color: white;
-        }
-
-        .testimonials .section-title p {
-            color: rgba(255, 255, 255, 0.8);
         }
 
         .testimonial-grid {
@@ -386,28 +386,26 @@
         }
 
         .testimonial-card {
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 8px;
             position: relative;
         }
 
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(255, 255, 255, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
         }
 
-        .testimonial-text {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.2);
+            font-family: Georgia, serif;
         }
 
         .testimonial-author {
@@ -438,45 +436,86 @@
             font-size: 0.9rem;
         }
 
-        /* Newsletter */
-        .newsletter {
-            text-align: center;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 3rem 0;
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
         }
 
-        .newsletter h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .contact-info {
+            margin-bottom: 2rem;
         }
 
-        .newsletter p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
         }
 
-        .newsletter-form {
+        .contact-item {
             display: flex;
-            max-width: 500px;
-            margin: 0 auto;
+            margin-bottom: 1.5rem;
         }
 
-        .newsletter-form input {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            border-radius: 4px 0 0 4px;
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-text p {
+            opacity: 0.8;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
             font-size: 1rem;
         }
 
-        .newsletter-form .btn {
-            border-radius: 0 4px 4px 0;
+        textarea.form-control {
+            min-height: 150px;
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark-color);
+            background: var(--dark);
             color: white;
             padding: 4rem 0 2rem;
         }
@@ -502,12 +541,7 @@
             left: 0;
             width: 40px;
             height: 2px;
-            background-color: var(--accent-color);
-        }
-
-        .footer-col p {
-            margin-bottom: 1rem;
-            opacity: 0.8;
+            background: var(--secondary);
         }
 
         .footer-links {
@@ -522,12 +556,12 @@
             color: white;
             text-decoration: none;
             opacity: 0.8;
-            transition: opacity 0.3s;
+            transition: var(--transition);
         }
 
         .footer-links a:hover {
             opacity: 1;
-            color: var(--accent-color);
+            color: var(--secondary);
         }
 
         .social-links {
@@ -541,65 +575,75 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             margin-right: 1rem;
             color: white;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
 
         .social-links a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
+            background: var(--secondary);
+            color: var(--dark);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.8;
+            opacity: 0.7;
             font-size: 0.9rem;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-            }
-
-            nav ul li {
-                margin-left: 0.8rem;
-                margin-right: 0.8rem;
-            }
-
+        @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
-            .search-form {
+            .about-content {
                 grid-template-columns: 1fr;
             }
 
-            .newsletter-form {
-                flex-direction: column;
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 600px;
             }
 
-            .newsletter-form input {
-                border-radius: 4px;
-                margin-bottom: 0.5rem;
+            .hero h1 {
+                font-size: 2.2rem;
             }
 
-            .newsletter-form .btn {
-                border-radius: 4px;
-                width: 100%;
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -607,17 +651,18 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-plane"></i>
-                Voyage<span>Vista</span>
+                <img src="https://via.placeholder.com/40x40" alt="Visit Abroad Logo">
+                Visit <span>Abroad</span>
             </a>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Destinations</a></li>
-                    <li><a href="#">Packages</a></li>
                     <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Testimonials</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#" class="btn">Book Now</a></li>
+                    <li><a href="#" class="btn">Apply Now</a></li>
                 </ul>
             </nav>
         </div>
@@ -625,38 +670,102 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content container">
-            <h1>Discover Your Dream Destination</h1>
-            <p>Explore the world's most beautiful places with our expertly crafted travel packages. Adventure awaits!</p>
-            <div class="search-box">
-                <h2>Find Your Perfect Trip</h2>
-                <form class="search-form">
-                    <div class="form-group">
-                        <label for="destination">Destination</label>
-                        <input type="text" id="destination" class="form-control" placeholder="Where to?">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Study and Travel <span>Abroad</span> from Sylhet</h1>
+                <p>Visit Abroad is your trusted partner for educational travel services from Sylhet to Europe and America. We provide complete guidance for students and visitors looking to explore international opportunities.</p>
+                <a href="#" class="btn">Start Your Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Visit Abroad</h2>
+                <p>Your trusted educational travel agency based in Sylhet, Bangladesh</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Visit Abroad Team">
+                </div>
+                <div class="about-text">
+                    <h3>Why Choose Us for Your International Journey?</h3>
+                    <p>Visit Abroad specializes in helping students and visitors from Sylhet navigate the complex process of traveling to Europe and America for education and tourism purposes.</p>
+                    <p>With over 10 years of experience, we've helped hundreds of students successfully obtain visas and settle into their new academic environments abroad.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-passport"></i>
+                            </div>
+                            <div>
+                                <h4>Visa Assistance</h4>
+                                <p>Complete guidance for student and visitor visas</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>
+                                <h4>University Admissions</h4>
+                                <p>Partnerships with institutions in Europe & America</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Dedicated support from application to arrival</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="check-in">Check In</label>
-                        <input type="date" id="check-in" class="form-control">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions for your international education and travel needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Student Visa">
                     </div>
-                    <div class="form-group">
-                        <label for="check-out">Check Out</label>
-                        <input type="date" id="check-out" class="form-control">
+                    <div class="service-content">
+                        <h3>Student Visa Processing</h3>
+                        <p>Complete assistance with documentation, applications, and interview preparation for student visas to Europe and America.</p>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
-                    <div class="form-group">
-                        <label for="guests">Guests</label>
-                        <select id="guests" class="form-control">
-                            <option value="1">1 Guest</option>
-                            <option value="2">2 Guests</option>
-                            <option value="3">3 Guests</option>
-                            <option value="4">4 Guests</option>
-                            <option value="5+">5+ Guests</option>
-                        </select>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="University Admission">
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn" style="width: 100%; margin-top: 1.8rem;">Search</button>
+                    <div class="service-content">
+                        <h3>University Admission</h3>
+                        <p>Guidance through the entire admission process including application, documentation, and scholarship opportunities.</p>
+                        <a href="#" class="btn">Learn More</a>
                     </div>
-                </form>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Visitor Visa">
+                    </div>
+                    <div class="service-content">
+                        <h3>Visitor Visa Assistance</h3>
+                        <p>Professional support for family visit, tourist, and business visas to European and American countries.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -666,139 +775,58 @@
         <div class="container">
             <div class="section-title">
                 <h2>Popular Destinations</h2>
-                <p>Explore our most sought-after travel destinations that promise unforgettable experiences</p>
+                <p>We specialize in these top study and travel destinations from Sylhet</p>
             </div>
-            <div class="destinations">
+            <div class="destinations-grid">
                 <div class="destination-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bali">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="United Kingdom">
                     </div>
-                    <div class="card-content">
-                        <h3>Bali, Indonesia</h3>
-                        <p>Known as the Island of the Gods, Bali blends spectacular beaches with ancient temples and lush jungles.</p>
-                        <span class="price">From $1,299</span>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(128 reviews)</span>
+                    <div class="destination-content">
+                        <h3>United Kingdom</h3>
+                        <p>Home to world-renowned universities with rich academic traditions.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-users"></i> 120+ Students</span>
+                            <span class="destination-price">From £12,000</span>
                         </div>
-                        <a href="#" class="btn">View Package</a>
                     </div>
                 </div>
                 <div class="destination-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paris">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="United States">
                     </div>
-                    <div class="card-content">
-                        <h3>Paris, France</h3>
-                        <p>The City of Light needs no introduction with its iconic landmarks, world-class cuisine, and romantic ambiance.</p>
-                        <span class="price">From $1,799</span>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(95 reviews)</span>
+                    <div class="destination-content">
+                        <h3>United States</h3>
+                        <p>World-class education with diverse cultural experiences.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-users"></i> 80+ Students</span>
+                            <span class="destination-price">From $20,000</span>
                         </div>
-                        <a href="#" class="btn">View Package</a>
                     </div>
                 </div>
                 <div class="destination-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tokyo">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Germany">
                     </div>
-                    <div class="card-content">
-                        <h3>Tokyo, Japan</h3>
-                        <p>Where ancient tradition meets cutting-edge technology in this electrifying metropolis.</p>
-                        <span class="price">From $2,199</span>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(142 reviews)</span>
-                        </div>
-                        <a href="#" class="btn">View Package</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section class="section packages">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Packages</h2>
-                <p>Tailored travel experiences for every type of adventurer</p>
-            </div>
-            <div class="package-tabs">
-                <button class="tab-btn active">All</button>
-                <button class="tab-btn">Adventure</button>
-                <button class="tab-btn">Beach</button>
-                <button class="tab-btn">Cultural</button>
-                <button class="tab-btn">Luxury</button>
-            </div>
-            <div class="package-grid">
-                <div class="package-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Safari Adventure">
-                    </div>
-                    <div class="package-info">
-                        <h3>African Safari Adventure</h3>
-                        <div class="package-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 10 Days</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Kenya, Tanzania</span>
-                        </div>
-                        <div class="package-details">
-                            <p>Experience the thrill of spotting the Big Five on this unforgettable safari across East Africa's most famous national parks.</p>
-                        </div>
-                        <div class="package-footer">
-                            <span class="price">$3,499</span>
-                            <a href="#" class="btn">Book Now</a>
+                    <div class="destination-content">
+                        <h3>Germany</h3>
+                        <p>High-quality education with low or no tuition fees.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-users"></i> 60+ Students</span>
+                            <span class="destination-price">From €10,000</span>
                         </div>
                     </div>
                 </div>
-                <div class="package-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Maldives Resort">
+                <div class="destination-card">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1495563381401-ecfbcaaa60f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Canada">
                     </div>
-                    <div class="package-info">
-                        <h3>Maldives Paradise Retreat</h3>
-                        <div class="package-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 7 Days</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Maldives</span>
-                        </div>
-                        <div class="package-details">
-                            <p>Relax in your private overwater bungalow with direct access to crystal-clear lagoons and vibrant coral reefs.</p>
-                        </div>
-                        <div class="package-footer">
-                            <span class="price">$4,299</span>
-                            <a href="#" class="btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="package-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Italian Tour">
-                    </div>
-                    <div class="package-info">
-                        <h3>Italian Cultural Journey</h3>
-                        <div class="package-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 12 Days</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Italy</span>
-                        </div>
-                        <div class="package-details">
-                            <p>From Rome's ancient ruins to Florence's Renaissance art and Venice's canals, immerse yourself in Italy's rich cultural heritage.</p>
-                        </div>
-                        <div class="package-footer">
-                            <span class="price">$2,899</span>
-                            <a href="#" class="btn">Book Now</a>
+                    <div class="destination-content">
+                        <h3>Canada</h3>
+                        <p>Excellent education system with post-study work opportunities.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-users"></i> 90+ Students</span>
+                            <span class="destination-price">From CAD$15,000</span>
                         </div>
                     </div>
                 </div>
@@ -810,49 +838,49 @@
     <section class="section testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Traveler Stories</h2>
-                <p>Hear what our customers say about their experiences with Voyage Vista</p>
+                <h2>Success Stories</h2>
+                <p>What our students and clients say about their experiences</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>The African safari organized by Voyage Vista exceeded all our expectations. Our guide was incredibly knowledgeable and we saw all the Big Five within the first three days!</p>
+                        <p>Visit Abroad made my dream of studying in the UK come true. Their guidance through the entire process was exceptional, especially with my visa application which was approved on the first attempt.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahim Ahmed">
                         </div>
                         <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Safari Adventure, 2023</p>
+                            <h4>Rahim Ahmed</h4>
+                            <p>University of London, UK</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>Our honeymoon in the Maldives was absolutely perfect thanks to Voyage Vista. Every detail was taken care of, from the seaplane transfers to the romantic beach dinner.</p>
+                        <p>As a parent, I was nervous about sending my daughter abroad. Visit Abroad's team in Sylhet provided complete support and regular updates, making the transition smooth for our entire family.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Fatima Begum">
                         </div>
                         <div class="author-info">
-                            <h4>Michael & Emily Chen</h4>
-                            <p>Maldives Retreat, 2023</p>
+                            <h4>Fatima Begum</h4>
+                            <p>Parent of student in Canada</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        <p>As a solo traveler, I was hesitant at first, but Voyage Vista's Japan cultural tour was the perfect mix of guided activities and free time to explore on my own.</p>
+                        <p>The scholarship guidance I received from Visit Abroad helped me secure funding for my studies in Germany. Their local knowledge in Sylhet combined with international expertise is unmatched.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jessica Martinez">
+                            <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Karim Uddin">
                         </div>
                         <div class="author-info">
-                            <h4>Jessica Martinez</h4>
-                            <p>Japan Discovery, 2023</p>
+                            <h4>Karim Uddin</h4>
+                            <p>Technical University of Munich</p>
                         </div>
                     </div>
                 </div>
@@ -860,15 +888,83 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
+    <!-- Contact Section -->
+    <section class="section">
         <div class="container">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to our newsletter for exclusive travel deals, tips, and inspiration delivered straight to your inbox.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email address">
-                <button type="submit" class="btn">Subscribe</button>
-            </form>
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Visit our office in Sylhet or get in touch today</p>
+            </div>
+            <div class="contact-container">
+                <div>
+                    <div class="contact-info">
+                        <h3>Our Sylhet Office</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>123 College Road, Zindabazar<br>Sylhet 3100, Bangladesh</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+880 1234 567890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>info@visitabroad.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Office Hours</h3>
+                        <p>Saturday - Thursday: 9:00 AM - 6:00 PM<br>
+                        Friday: Closed</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Interest</label>
+                            <select id="interest" class="form-control" required>
+                                <option value="">Select an option</option>
+                                <option value="student-visa">Student Visa</option>
+                                <option value="visitor-visa">Visitor Visa</option>
+                                <option value="university-admission">University Admission</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -877,13 +973,13 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>About Voyage Vista</h3>
-                    <p>We're passionate about creating unforgettable travel experiences that go beyond the ordinary.</p>
+                    <h3>Visit Abroad</h3>
+                    <p>Your trusted educational travel agency based in Sylhet, specializing in helping students and visitors travel to Europe and America.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -891,33 +987,61 @@
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
                         <li><a href="#">Destinations</a></li>
-                        <li><a href="#">Packages</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Testimonials</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Support</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Booking Terms</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">Student Visa</a></li>
+                        <li><a href="#">University Admission</a></li>
+                        <li><a href="#">Visitor Visa</a></li>
+                        <li><a href="#">IELTS Preparation</a></li>
+                        <li><a href="#">Pre-Departure Briefing</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Suite 456<br>New York, NY 10001</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@voyagevista.com</p>
+                    <h3>Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">United Kingdom</a></li>
+                        <li><a href="#">United States</a></li>
+                        <li><a href="#">Canada</a></li>
+                        <li><a href="#">Germany</a></li>
+                        <li><a href="#">Other Countries</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Voyage Vista. All Rights Reserved.</p>
+                <p>&copy; 2023 Visit Abroad. All Rights Reserved. | Designed for Sylhet-based students and visitors</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Simple JavaScript for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preloader
+            window.addEventListener('load', function() {
+                const preloader = document.querySelector('.preloader');
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
