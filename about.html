@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Visit Abroad</title>
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #28b463;
+            --accent-color: #f39c12;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500;
+            margin: 0 5px;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #239b56;
+            border-color: #239b56;
+        }
+        
+        .btn-outline-primary {
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.9)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .country-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .country-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .country-flag {
+            height: 120px;
+            object-fit: cover;
+        }
+        
+        .testimonial-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+        }
+        
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .whatsapp-float:hover {
+            color: white;
+            background-color: #128C7E;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(40, 180, 99, 0.25);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+
+    <!-- About Hero -->
+    <section class="hero-section" style="background-image: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">About Our Agency</h1>
+            <p class="lead mb-5">Your trusted partner for global opportunities</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <h2 class="section-title text-start">Who We Are</h2>
+                    <p>Visit Abroad Agency is a leading visa and immigration consultancy based in Bangladesh, dedicated to helping individuals achieve their dreams of working, studying, or traveling abroad.</p>
+                    <p>Founded in 2010, we have successfully assisted thousands of clients in navigating the complex visa application processes for various countries around the world.</p>
+                    <p>Our team consists of experienced immigration consultants, legal advisors, and former visa officers who understand the intricacies of international migration.</p>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2 class="section-title text-start">Our Mission</h2>
+                    <p>Our mission is to provide honest, transparent, and professional immigration services that empower Bangladeshi citizens to explore global opportunities with confidence.</p>
+                    <p>We believe in:</p>
+                    <ul>
+                        <li>Ethical and legal immigration practices</li>
+                        <li>Personalized service for each client</li>
+                        <li>Up-to-date knowledge of immigration laws</li>
+                        <li>Continuous improvement of our services</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card p-4 text-center h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h4>12+ Years Experience</h4>
+                        <p>Over a decade of successfully helping clients migrate abroad</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card p-4 text-center h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>5000+ Clients</h4>
+                        <p>Thousands of satisfied clients across multiple countries</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card p-4 text-center h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>20+ Countries</h4>
+                        <p>We handle visa processes for destinations worldwide</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2 class="section-title text-start">Our Team</h2>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card text-center p-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member" class="rounded-circle mx-auto mb-3" width="120">
+                        <h4>Md. Rahman</h4>
+                        <p class="text-muted">Founder & CEO</p>
+                        <p>15+ years in immigration consulting</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card text-center p-4">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team Member" class="rounded-circle mx-auto mb-3" width="120">
+                        <h4>Fatima Begum</h4>
+                        <p class="text-muted">Visa Specialist</p>
+                        <p>Expert in European work visas</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card team-card text-center p-4">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Team Member" class="rounded-circle mx-auto mb-3" width="120">
+                        <h4>Karim Ahmed</h4>
+                        <p class="text-muted">Student Visa Consultant</p>
+                        <p>Specializes in UK and Canada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Same footer as index.html -->
+</body>
+</html>
