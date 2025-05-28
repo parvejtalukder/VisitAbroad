@@ -3,193 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit Abroad - Educational Travel Agency from Sylhet</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Visit Abroad Agency - Your Gateway to Global Opportunities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #28b463;
+            --accent-color: #f39c12;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500;
+            margin: 0 5px;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #239b56;
+            border-color: #239b56;
+        }
+        
+        .btn-outline-primary {
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.9)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .country-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .country-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .country-flag {
+            height: 120px;
+            object-fit: cover;
+        }
+        
+        .testimonial-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+        }
+        
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .whatsapp-float:hover {
+            color: white;
+            background-color: #128C7E;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(40, 180, 99, 0.25);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="https://visitabroad.agency" class="logo">
-                <img src="https://pro.bhikitia.org/images/e/eb/Wa.png" alt="Visit Abroad Logo">
-
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Destinations</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#" class="btn">Apply Now</a></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Visit Abroad Agency</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destinations.html">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="apply.html">Apply Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
                 </ul>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero-section">
         <div class="container">
-            <div class="hero-content">
-                <h1>Study and Travel <span>Abroad</span> from Sylhet</h1>
-                <p>Visit Abroad is your trusted partner for educational travel services from Sylhet to Europe and America. We provide complete guidance for students and visitors looking to explore international opportunities.</p>
-                <a href="#" class="btn">Start Your Journey</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Visit Abroad</h2>
-                <p>Your trusted educational travel agency based in Sylhet, Bangladesh</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Visit Abroad Team">
-                </div>
-                <div class="about-text">
-                    <h3>Why Choose Us for Your International Journey?</h3>
-                    <p>Visit Abroad specializes in helping students and visitors from Sylhet navigate the complex process of traveling to Europe and America for education and tourism purposes.</p>
-                    <p>With over 10 years of experience, we've helped hundreds of students successfully obtain visas and settle into their new academic environments abroad.</p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-passport"></i>
-                            </div>
-                            <div>
-                                <h4>Visa Assistance</h4>
-                                <p>Complete guidance for student and visitor visas</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <div>
-                                <h4>University Admissions</h4>
-                                <p>Partnerships with institutions in Europe & America</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div>
-                                <h4>24/7 Support</h4>
-                                <p>Dedicated support from application to arrival</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h1 class="display-4 fw-bold mb-4">Your Gateway to Global Opportunities</h1>
+            <p class="lead mb-5">Trusted visa and migration consultancy from Bangladesh helping you work, study, or travel abroad</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="apply.html" class="btn btn-primary btn-lg px-4">Apply Now</a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Free Consultation</a>
+                <a href="https://wa.me/8801234567890" class="btn btn-light btn-lg px-4"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="section services">
+    <section class="py-5">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive solutions for your international education and travel needs</p>
+            <h2 class="text-center section-title">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4>Work Permit Support</h4>
+                        <p>Comprehensive assistance with work visa applications and job placement abroad.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Student Visa Guidance</h4>
+                        <p>Expert help with university admissions and student visa processing worldwide.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h4>Tourist Visa Processing</h4>
+                        <p>Efficient handling of all documents for your travel visa applications.</p>
+                    </div>
+                </div>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Student Visa">
-                    </div>
-                    <div class="service-content">
-                        <h3>Student Visa Processing</h3>
-                        <p>Complete assistance with documentation, applications, and interview preparation for student visas to Europe and America.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="University Admission">
-                    </div>
-                    <div class="service-content">
-                        <h3>University Admission</h3>
-                        <p>Guidance through the entire admission process including application, documentation, and scholarship opportunities.</p>
-                        <a href="#" class="btn">Learn More</a>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h4>Ticketing & Travel Help</h4>
+                        <p>Affordable air tickets and complete travel arrangements.</p>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Visitor Visa">
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4>Document Preparation</h4>
+                        <p>Professional CV writing and document preparation for visa applications.</p>
                     </div>
-                    <div class="service-content">
-                        <h3>Visitor Visa Assistance</h3>
-                        <p>Professional support for family visit, tourist, and business visas to European and American countries.</p>
-                        <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Interview Preparation</h4>
+                        <p>Mock interviews and coaching to help you succeed in visa interviews.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Destinations Section -->
-    <section class="section">
+    <!-- Popular Destinations -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="section-title">
-                <h2>Popular Destinations</h2>
-                <p>We specialize in these top study and travel destinations from Sylhet</p>
+            <h2 class="text-center section-title">Popular Destinations</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card country-card">
+                        <img src="https://flagcdn.com/w320/gb.png" alt="UK Flag" class="country-flag w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">United Kingdom</h5>
+                            <p class="card-text">Work visas, student visas, and settlement options available for skilled professionals.</p>
+                            <a href="destinations.html#uk" class="btn btn-sm btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card country-card">
+                        <img src="https://flagcdn.com/w320/ca.png" alt="Canada Flag" class="country-flag w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Canada</h5>
+                            <p class="card-text">Express Entry, Provincial Nominee Programs, and study permits with work options.</p>
+                            <a href="destinations.html#canada" class="btn btn-sm btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card country-card">
+                        <img src="https://flagcdn.com/w320/it.png" alt="Italy Flag" class="country-flag w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Italy</h5>
+                            <p class="card-text">Seasonal work permits, student visas, and family reunification options.</p>
+                            <a href="destinations.html#italy" class="btn btn-sm btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="destinations-grid">
-                <div class="destination-card">
-                    <div class="destination-img">
-                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="United Kingdom">
-                    </div>
-                    <div class="destination-content">
-                        <h3>United Kingdom</h3>
-                        <p>Home to world-renowned universities with rich academic traditions.</p>
-                        <div class="destination-meta">
-                            <span><i class="fas fa-users"></i> 120+ Students</span>
-                            <span class="destination-price">From £12,000</span>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card country-card">
+                        <img src="https://flagcdn.com/w320/ro.png" alt="Romania Flag" class="country-flag w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Romania</h5>
+                            <p class="card-text">Work permits for various sectors with straightforward application process.</p>
+                            <a href="destinations.html#romania" class="btn btn-sm btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-img">
-                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="United States">
-                    </div>
-                    <div class="destination-content">
-                        <h3>United States</h3>
-                        <p>World-class education with diverse cultural experiences.</p>
-                        <div class="destination-meta">
-                            <span><i class="fas fa-users"></i> 80+ Students</span>
-                            <span class="destination-price">From $20,000</span>
+                <div class="col-md-4">
+                    <div class="card country-card">
+                        <img src="https://flagcdn.com/w320/ae.png" alt="UAE Flag" class="country-flag w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">United Arab Emirates</h5>
+                            <p class="card-text">Employment visas, investor visas, and family sponsorship options.</p>
+                            <a href="destinations.html#uae" class="btn btn-sm btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-img">
-                        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Germany">
-                    </div>
-                    <div class="destination-content">
-                        <h3>Germany</h3>
-                        <p>High-quality education with low or no tuition fees.</p>
-                        <div class="destination-meta">
-                            <span><i class="fas fa-users"></i> 60+ Students</span>
-                            <span class="destination-price">From €10,000</span>
+                <div class="col-md-4">
+                    <div class="card country-card">
+                        <img src="https://flagcdn.com/w320/my.png" alt="Malaysia Flag" class="country-flag w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Malaysia</h5>
+                            <p class="card-text">Work permits, student visas, and Malaysia My Second Home program.</p>
+                            <a href="destinations.html#malaysia" class="btn btn-sm btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-img">
-                        <img src="https://images.unsplash.com/photo-1495563381401-ecfbcaaa60f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Canada">
+            </div>
+            <div class="text-center mt-4">
+                <a href="destinations.html" class="btn btn-primary px-4">View All Destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Success Stories</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Rahim Khan</h5>
+                                <small class="text-muted">Canada Work Visa</small>
+                            </div>
+                        </div>
+                        <p>"Visit Abroad Agency helped me get my Canadian work visa in just 3 months. Their guidance was exceptional throughout the process."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
-                    <div class="destination-content">
-                        <h3>Canada</h3>
-                        <p>Excellent education system with post-study work opportunities.</p>
-                        <div class="destination-meta">
-                            <span><i class="fas fa-users"></i> 90+ Students</span>
-                            <span class="destination-price">From CAD$15,000</span>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Fatima Akter</h5>
+                                <small class="text-muted">UK Student Visa</small>
+                            </div>
+                        </div>
+                        <p>"I got admission to a UK university with their help. They made the complicated visa process so simple and easy to understand."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Jamal Uddin</h5>
+                                <small class="text-muted">Italy Work Visa</small>
+                            </div>
+                        </div>
+                        <p>"Thanks to Visit Abroad Agency, I'm now working in Italy with a good salary. They handled everything professionally."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
                         </div>
                     </div>
                 </div>
@@ -197,137 +469,14 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Success Stories</h2>
-                <p>What our students and clients say about their experiences</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>Visit Abroad made my dream of studying in the UK come true. Their guidance through the entire process was exceptional, especially with my visa application which was approved on the first attempt.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahim Ahmed">
-                        </div>
-                        <div class="author-info">
-                            <h4>Rahim Ahmed</h4>
-                            <p>University of London, UK</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>As a parent, I was nervous about sending my daughter abroad. Visit Abroad's team in Sylhet provided complete support and regular updates, making the transition smooth for our entire family.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Fatima Begum">
-                        </div>
-                        <div class="author-info">
-                            <h4>Fatima Begum</h4>
-                            <p>Parent of student in Canada</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>The scholarship guidance I received from Visit Abroad helped me secure funding for my studies in Germany. Their local knowledge in Sylhet combined with international expertise is unmatched.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">
-                            <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Karim Uddin">
-                        </div>
-                        <div class="author-info">
-                            <h4>Karim Uddin</h4>
-                            <p>Technical University of Munich</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Visit our office in Sylhet or get in touch today</p>
-            </div>
-            <div class="contact-container">
-                <div>
-                    <div class="contact-info">
-                        <h3>Our Sylhet Office</h3>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Address</h4>
-                                <p>123 College Road, Zindabazar<br>Sylhet 3100, Bangladesh</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>+880 1234 567890</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p><a href="mailto:visitabroadoffice@gmail.com">visitabroadoffice@gmail.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <h3>Office Hours</h3>
-                        <p>Saturday - Thursday: 9:00 AM - 6:00 PM<br>
-                        Friday: Closed</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-    <form action="https://formspree.io/f/movdbkoj" method="POST">
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="interest">Interest</label>
-            <select id="interest" name="interest" class="form-control" required>
-                <option value="">Select an option</option>
-                <option value="student-visa">Student Visa</option>
-                <option value="visitor-visa">Visitor Visa</option>
-                <option value="university-admission">University Admission</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
-        </div>
-        <button type="submit" class="btn">Send Message</button>
-    </form>
-</div>
-
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Start Your Journey Abroad?</h2>
+            <p class="lead mb-5">Contact us today for a free consultation and take the first step towards your dream destination.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="apply.html" class="btn btn-light btn-lg px-4">Apply Now</a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
             </div>
         </div>
     </section>
@@ -335,76 +484,58 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Visit Abroad</h3>
-                    <p>Your trusted educational travel agency based in Sylhet, specializing in helping students and visitors travel to Europe and America.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Visit Abroad Agency</h5>
+                    <p>Your trusted partner for visa and immigration services from Bangladesh to worldwide destinations.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Destinations</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                <div class="col-md-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="services.html">Services</a>
+                        <a href="destinations.html">Destinations</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Student Visa</a></li>
-                        <li><a href="#">University Admission</a></li>
-                        <li><a href="#">Visitor Visa</a></li>
-                        <li><a href="#">IELTS Preparation</a></li>
-                        <li><a href="#">Pre-Departure Briefing</a></li>
-                    </ul>
+                <div class="col-md-3 mb-4">
+                    <h5>Services</h5>
+                    <div class="footer-links">
+                        <a href="services.html">Work Visa</a>
+                        <a href="services.html">Student Visa</a>
+                        <a href="services.html">Tourist Visa</a>
+                        <a href="services.html">Document Preparation</a>
+                        <a href="services.html">Air Ticketing</a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Destinations</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">United Kingdom</a></li>
-                        <li><a href="#">United States</a></li>
-                        <li><a href="#">Canada</a></li>
-                        <li><a href="#">Germany</a></li>
-                        <li><a href="#">Other Countries</a></li>
-                    </ul>
+                <div class="col-md-3 mb-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Road, Dhaka, Bangladesh</p>
+                    <p><i class="fas fa-phone me-2"></i> +880 1234 567890</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@visitabroadagency.com</p>
+                    <p><i class="fab fa-whatsapp me-2"></i> +880 1234 567890</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Visit Abroad. All Rights Reserved. | Designed for Sylhet-based students and visitors</p>
+            <hr class="mt-4" style="background-color: rgba(255,255,255,0.1);">
+            <div class="text-center pt-3">
+                <p class="mb-0">&copy; 2023 Visit Abroad Agency. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    <script>
-        // Simple JavaScript for demonstration
-        document.addEventListener('DOMContentLoaded', function() {
-            // Preloader
-            window.addEventListener('load', function() {
-                const preloader = document.querySelector('.preloader');
-                preloader.classList.add('fade-out');
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            });
 
-            // Header scroll effect
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        });
-    </script>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/8801234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
